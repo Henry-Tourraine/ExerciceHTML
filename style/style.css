@@ -1,0 +1,356 @@
+:root {
+    --home-background: #1e90ff;
+    --contact-background: #1effc3;
+   
+  }
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+
+body{
+    overflow-x: hidden;
+
+}
+#home{
+    background: var(--home-background);
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: center;
+    width: 60vw;
+}
+
+#contact{
+    background: var(--contact-background);
+    padding: 3em;
+    max-width: 90vw;
+}
+#homeLink:hover, #contactLink:hover{
+    color: cyan;
+    cursor: pointer;
+}
+header{
+    width: 100vw;
+    height: 5em;
+    background: rgb(41, 41, 90);
+    padding: 1em 0;
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-around;
+    align-items: center;
+    color: lightgrey;
+ 
+}
+.productWrapper{
+    max-width: 90vw;
+    max-height: 40vh;
+    font-size: 2em;
+    background: rgba(87, 202, 192, 0.726)!important;
+    border-radius: 2vh 2vh;
+    border: solid rgb(88, 88, 136) 2px;
+    padding: 10% 5%;
+
+    display: flex;
+    flex-flow: wrap column;
+    align-items: center;
+    justify-content: center;
+    margin: 1% 1%;
+}
+.productWrapper p{
+    cursor: pointer;
+}
+#menu{
+    transition: width, transform 0.5s ease-in-out;
+    overflow-x: visible;
+    cursor: pointer;
+    
+}
+.wrap{
+        width: 5vh;
+        height: 5vh;
+        position:relative;
+        animation: slideOut 0.5s ease-in;
+    }
+    
+.unwrap{
+    position:absolute;
+    background: orange;
+    top:0;
+    left: 0;
+    width: 30%;
+    height: 100vh;
+    animation: slideIn 0.5s ease-in;
+}
+
+@keyframes slideIn {
+    0%{
+        width: 5%;
+        height: 10vh;
+    }
+    100%{
+        width: 30%;
+        height: 100vh;
+    }
+}
+
+@keyframes slideOut {
+    0%{
+        width: 30%;
+        height: 100vh;
+        top:0;
+    
+    }
+    100%{
+        width: 5%;
+        height: 10vh;
+        top: 1.2em;
+        
+    }
+}
+.burger{
+    position: relative;
+    width: 5em;
+    height: 0.5em;
+    background: black;
+    border-radius: 1vh 1vh;
+    display: block;
+}
+.burger:before{
+    position: absolute;
+    top: 1em;
+    content: "";
+    width: 5em;
+    height: 0.5em;
+    background: black;
+    border-radius: 1vh 1vh;
+}
+.burger:after{
+    position: absolute;
+    top: 2em;
+    content: "";
+    width: 5em;
+    height: 0.5em;
+    background: black;
+    border-radius: 1vh 1vh;
+}
+.cross{
+    position: absolute;
+    right: 4em;
+    top: 1em;
+    display: none;
+}
+.cross:before{
+    position: absolute;
+    top: 1em;
+    content: "";
+    width: 3em;
+    height: 0.5em;
+    background: black;
+    border-radius: 1vh 1vh;
+    transform: rotate(45deg);
+}
+.cross:after{
+    position: absolute;
+    top: 1em;
+    content: "";
+    width: 3em;
+    height: 0.5em;
+    background: black;
+    border-radius: 1vh 1vh;
+    transform: rotate(-45deg);
+}
+#menuSection{
+    transition: width 3s ease-in-out; /*useless*/
+  
+}
+p{
+ 
+    width: fit-content;
+
+}
+h2{
+ 
+    width: fit-content;
+
+}
+
+footer{
+    background: rgb(16, 15, 18);
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-around;
+    padding: 2em;
+    align-items: center;
+    color: white;
+}
+footer li{
+    list-style: none;
+}
+
+form{
+    margin: auto;
+    width: fit-content;
+    padding: 2em;
+}
+form *{
+    width: fit-content;
+    padding: 1em;
+}
+form div{
+    position: relative;
+}
+form label{
+    position: absolute;
+    top:0;
+    left: 0;
+    transform: translate(20%, 20%);
+}
+form input{
+    border: none;
+    background: rgba(255, 255, 255, 0.4);
+}
+form input:active, form input:focus{
+    border: none;
+    outline: none;
+    border-bottom: solid black 1px;
+}
+form input::placeholder{
+    opacity: 0;
+}
+form input:focus + label{
+    position: absolute;
+    top:0;
+    left: 0;
+    transform: translate(20%, -50%);
+}
+form input:active + label{
+    position: absolute;
+    top:0;
+    left: 0;
+    transform: translate(20%, -50%);
+}
+
+form input:not(:placeholder-shown) + label{
+    position: absolute;
+    top:0;
+    left: 0;
+    transform: translate(20%, -50%);
+}
+form button{
+    background: rgb(16, 16, 82);
+    outline: none;
+    border: none;
+    border-radius: 2vh 2vh;
+    color: white;
+    cursor: pointer;
+}
+.panel{
+    list-style: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--home-background);
+    
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(63, 88, 136);
+    border-radius: 10vh;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(37, 14, 104);
+  }
+
+@media screen and (min-width: 1px){
+    ::-webkit-scrollbar {
+        width: 0px;
+        
+      }
+      
+     
+     
+    
+}
+/*
+@media screen and(min-width: 576px){}
+*/
+@media(max-width: 768px){
+    ::-webkit-scrollbar {
+        width: 0px;
+        
+      }
+    .wrap{
+        width: 5vh;
+        height: 5vh;
+        position:relative;
+        animation: slideOut 0.5s ease-in;
+    }
+    
+.unwrap{
+    position:absolute;
+    background: orange;
+    top:0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    animation: slideIn 0.5s ease-in;
+}
+
+@keyframes slideIn {
+    0%{
+        width: 5%;
+        height: 10vh;
+    }
+    100%{
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+@keyframes slideOut {
+    0%{
+        width: 100vw;
+        height: 100vh;
+        top:0;
+    
+    }
+    100%{
+        width: 5%;
+        height: 10vh;
+        top: 1.2em;
+        
+    }
+}
+
+}
+
+@media screen and (min-width: 992px){
+    ::-webkit-scrollbar {
+        width: 10px;
+        
+      }
+}
+/*
+@media screen and(min-width: 1200px){
+    
+}
+@media screen and(min-width: 1400px){
+    
+}
+*/
